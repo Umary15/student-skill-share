@@ -13,6 +13,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useProfile } from '@/hooks/useProfile';
 import { useMyGigs } from '@/hooks/useGigs';
 import { useMyOrders } from '@/hooks/useOrders';
+import { useOrderNotifications } from '@/hooks/useOrderNotifications';
 
 export default function Dashboard() {
   const { user, loading: authLoading } = useAuth();
@@ -20,6 +21,9 @@ export default function Dashboard() {
   const { data: myGigs, isLoading: gigsLoading } = useMyGigs();
   const { data: sellerOrders, isLoading: sellerOrdersLoading } = useMyOrders('seller');
   const { data: buyerOrders, isLoading: buyerOrdersLoading } = useMyOrders('buyer');
+
+  // Enable real-time notifications for orders
+  useOrderNotifications();
 
   const [activeTab, setActiveTab] = useState('gigs');
 
