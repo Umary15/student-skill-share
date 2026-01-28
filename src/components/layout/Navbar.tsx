@@ -54,6 +54,12 @@ export function Navbar() {
                   <User className="w-4 h-4" />
                   Dashboard
                 </Link>
+                <Link
+                  to="/profile"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Profile
+                </Link>
                 <Button
                   variant="ghost"
                   size="sm"
@@ -117,6 +123,13 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Dashboard
+                  </Link>
+                  <Link
+                    to="/profile"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Profile
                   </Link>
                   <Button
                     variant="ghost"
